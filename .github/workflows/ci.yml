@@ -21,5 +21,9 @@ jobs:
 
       - run: npx nx format:check
       - run: npx nx affected -t lint,test,build --parallel=3
+      - uses: supabase/setup-cli@v1
+        with:
+          version: latest
+      - run: npm run supabase:start
       - run: npx playwright install --with-deps
       - run: npx nx affected -t e2e

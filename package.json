@@ -2,9 +2,14 @@
   "name": "@speed-cube-trainer/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "ci": "npx nx format:check && npx nx affected -t lint,test,build --parallel=3",
+    "supabase:start": "npx supabase start",
+    "supabase:stop": "npx supabase stop --backup"
+  },
   "private": true,
   "devDependencies": {
+    "@faker-js/faker": "^8.3.1",
     "@nx/cypress": "17.1.2",
     "@nx/devkit": "17.1.2",
     "@nx/eslint": "17.1.2",
@@ -41,13 +46,17 @@
     "nx": "17.1.2",
     "postcss": "8.4.21",
     "prettier": "^2.6.2",
+    "supabase": "^1.112.0",
     "tailwindcss": "3.2.7",
     "ts-jest": "^29.1.0",
     "ts-node": "10.9.1",
     "typescript": "~5.2.2"
   },
   "dependencies": {
-    "next": "13.4.1",
+    "@supabase/ssr": "^0.0.10",
+    "@supabase/supabase-js": "^2.38.4",
+    "geist": "^1.1.0",
+    "next": "14.0.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "tslib": "^2.3.0"
