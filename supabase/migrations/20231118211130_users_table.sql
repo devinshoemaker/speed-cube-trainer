@@ -46,4 +46,3 @@ create policy "Users can insert their own profile."
 create policy "Users can update own profile."
   on users for update
   using ( auth.uid() = id );
-
