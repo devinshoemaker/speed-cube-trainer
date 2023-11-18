@@ -21,4 +21,5 @@ jobs:
 
       - run: npx nx format:check
       - run: npx nx affected -t lint,test,build --parallel=3
+      - run: npx playwright install --with-deps
       - run: npx nx affected -t e2e
