@@ -1,7 +1,7 @@
 import { faker } from '@faker-js/faker';
 import { expect, Page } from '@playwright/test';
 
-const createUser = async (page: Page) => {
+export async function createUser(page: Page) {
   const email = faker.internet.email();
   const password = faker.internet.password();
 
@@ -19,6 +19,4 @@ const createUser = async (page: Page) => {
   await page.getByRole('button', { name: 'Sign In' }).click();
   // Verify login was successful
   await expect(page.getByText(`Hey, ${email}!`)).toBeVisible();
-};
-
-export default createUser;
+}
