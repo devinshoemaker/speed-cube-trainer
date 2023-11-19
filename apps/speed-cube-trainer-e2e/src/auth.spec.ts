@@ -1,6 +1,8 @@
 import { test, expect } from '@playwright/test';
 import { faker } from '@faker-js/faker';
 
+import { deleteUser } from '../lib/supabase-admin-client';
+
 test.describe('Authentication', () => {
   test('can sign up', async ({ page }) => {
     const email = faker.internet.email();
@@ -21,5 +23,6 @@ test.describe('Authentication', () => {
     // Verify login was successful
     await expect(page.getByText(`Hey, ${email}!`)).toBeVisible();
     // Clean up
+    await deleteUser(email);
   });
 });
