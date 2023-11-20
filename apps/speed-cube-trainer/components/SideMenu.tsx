@@ -27,9 +27,9 @@ export default function SideMenu() {
             stroke="currentColor"
           >
             <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
               d="M4 6h16M4 12h16M4 18h16"
             />
           </svg>
@@ -49,7 +49,7 @@ export default function SideMenu() {
         {/* <!-- nav --> */}
         <nav>
           <a
-            href="#"
+            href="/timer"
             className="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-700 hover:text-white"
           >
             Timer
