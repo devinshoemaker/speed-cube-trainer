@@ -8,7 +8,7 @@ test.describe('Timer', () => {
     await page.getByText(/Timer/i).click();
     await expect(page).toHaveURL('/timer');
   });
-  
+
   test('should start the timer with the spacebar', async ({ page }) => {
     await createUser(page);
     await page.goto('/timer');
