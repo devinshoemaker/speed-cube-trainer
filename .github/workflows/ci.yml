@@ -14,16 +14,16 @@ jobs:
         with:
           node-version: 20
           cache: 'npm'
-      - run: npm ci
+      - run: pnpm i
       - uses: nrwl/nx-set-shas@v3
       # This line is needed for nx affected to work when CI is running on a PR
       - run: git branch --track main origin/main
 
-      - run: npx nx format:check
-      - run: npx nx affected -t lint,test,build --parallel=3
+      - run: pnpm exec nx format:check
+      - run: pnpm exec nx affected -t lint,test,build --parallel=3
       - uses: supabase/setup-cli@v1
         with:
           version: latest
-      - run: npm run supabase:start
-      - run: npx playwright install --with-deps
-      - run: npx nx affected -t e2e
+      - run: pnpm supabase:start
+      - run: pnpm exec playwright install --with-deps
+      - run: pnpm exec nx affected -t e2e
