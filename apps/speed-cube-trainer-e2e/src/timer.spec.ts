@@ -3,6 +3,11 @@ import test, { expect } from '@playwright/test';
 import { createUser } from '../lib/create-user';
 
 test.describe('Timer', () => {
+  test('should redirect if user is unauthenticated', async ({ page }) => {
+    await page.goto('/timer');
+    await expect(page).toHaveURL('/');
+  });
+
   test('side menu should navigate to timer', async ({ page }) => {
     await createUser(page);
     await page.getByText(/Timer/i).click();

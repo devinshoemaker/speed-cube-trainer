@@ -55,7 +55,7 @@ export default function SideMenu() {
             Timer
           </a>
           <a
-            href=""
+            href="/oll-list"
             className="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-700 hover:text-white"
           >
             OLL List
