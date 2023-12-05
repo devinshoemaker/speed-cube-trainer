@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useState } from 'react';
 
 export default function SideMenu() {
@@ -48,18 +49,18 @@ export default function SideMenu() {
 
         {/* <!-- nav --> */}
         <nav>
-          <a
+          <Link
             href="/timer"
             className="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-700 hover:text-white"
           >
             Timer
-          </a>
-          <a
+          </Link>
+          <Link
             href="/oll-list"
             className="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-700 hover:text-white"
           >
             OLL List
-          </a>
+          </Link>
         </nav>
       </div>
     </>
