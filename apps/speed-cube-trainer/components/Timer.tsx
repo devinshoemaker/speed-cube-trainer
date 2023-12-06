@@ -50,7 +50,7 @@ export default function Timer() {
   }
 
   return (
-    <div
+    <button
       className="flex flex-col justify-center items-center h-full"
       onClick={() => (running ? stopTimer() : startTimer())}
       data-testid="timer"
@@ -58,6 +58,6 @@ export default function Timer() {
       <div className="flex text-8xl w-fit">
         <span>{formatTime()}</span>
       </div>
-    </div>
+    </button>
   );
 }
