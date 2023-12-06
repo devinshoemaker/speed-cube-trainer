@@ -4,6 +4,7 @@
   "license": "MIT",
   "scripts": {
     "ci": "npx nx format && npx nx affected -t lint,test,build,e2e --parallel=3",
+    "setup": "prisma generate && prisma migrate deploy && prisma db seed",
     "supabase:start": "npx supabase start",
     "supabase:stop": "npx supabase stop --backup"
   },
@@ -46,6 +47,7 @@
     "nx": "17.2.8",
     "postcss": "8.4.21",
     "prettier": "^2.6.2",
+    "prisma": "^4.16.2",
     "supabase": "^1.113.2",
     "tailwindcss": "3.2.7",
     "ts-jest": "^29.1.0",
@@ -53,6 +55,7 @@
     "typescript": "~5.2.2"
   },
   "dependencies": {
+    "@prisma/client": "^4.16.2",
     "@supabase/ssr": "^0.0.10",
     "@supabase/supabase-js": "^2.38.5",
     "geist": "^1.1.0",
@@ -60,5 +63,8 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "tslib": "^2.3.0"
+  },
+  "prisma": {
+    "seed": "ts-node -r tsconfig-paths/register prisma/seed.ts"
   }
 }
