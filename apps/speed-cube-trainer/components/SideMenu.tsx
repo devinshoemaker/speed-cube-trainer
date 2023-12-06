@@ -9,7 +9,7 @@ export default function SideMenu() {
   return (
     <>
       {/* mobile nav */}
-      <div className="bg-gray-800 text-gray-100 flex justify-between md:hidden">
+      <div className="bg-gray-800 text-gray-100 flex justify-between sticky top-0 md:hidden">
         {/* <!-- logo --> */}
         <a href="#" className="block p-4 text-white font-bold">
           Cube Trainer
