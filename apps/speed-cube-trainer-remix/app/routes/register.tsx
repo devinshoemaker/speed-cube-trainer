@@ -63,7 +63,7 @@ export const action = async ({ request }: ActionFunctionArgs) => {
             password: null,
           },
         },
-        { status: 400 },
+        { status: 400 }
       );
     }
 

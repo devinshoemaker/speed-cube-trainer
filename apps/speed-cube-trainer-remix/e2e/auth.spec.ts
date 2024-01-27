@@ -101,7 +101,7 @@ test.describe("Authentication", () => {
     await page.getByRole("button", { name: /Sign Up/i }).click();
 
     await expect(
-      page.getByText(/A user already exists with this email/i),
+      page.getByText(/A user already exists with this email/i)
     ).toBeVisible();
   });
 });

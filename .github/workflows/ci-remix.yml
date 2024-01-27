@@ -29,7 +29,7 @@ jobs:
           cache: npm
           cache-dependency-path: ./package.json
           node-version: 20
-      
+
       - name: Change Directory
         run: cd apps/speed-cube-trainer-remix
 
@@ -52,7 +52,7 @@ jobs:
           cache: npm
           cache-dependency-path: ./package.json
           node-version: 20
-      
+
       - name: Change Directory
         run: cd apps/speed-cube-trainer-remix
 
@@ -75,7 +75,7 @@ jobs:
           cache: npm
           cache-dependency-path: ./package.json
           node-version: 20
-      
+
       - name: Change Directory
         run: cd apps/speed-cube-trainer-remix
 
@@ -98,7 +98,7 @@ jobs:
           cache: npm
           cache-dependency-path: ./package.json
           node-version: 20
-      
+
       - name: Change Directory
         run: cd apps/speed-cube-trainer-remix
 
@@ -124,7 +124,7 @@ jobs:
           cache: npm
           cache-dependency-path: ./package.json
           node-version: 20
-      
+
       - name: Change Directory
         run: cd apps/speed-cube-trainer-remix
 
@@ -137,7 +137,7 @@ jobs:
         # the sleep is just there to give time for postgres to get started
         run: docker compose up -d && sleep 3
         env:
-          DATABASE_URL: "postgresql://postgres:postgres@localhost:5432/postgres"
+          DATABASE_URL: 'postgresql://postgres:postgres@localhost:5432/postgres'
 
       - name: Setup Database
         run: npx prisma migrate reset --force

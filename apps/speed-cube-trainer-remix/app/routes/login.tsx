@@ -59,7 +59,7 @@ export const action = async ({ request }: ActionFunctionArgs) => {
     if (!user) {
       return json(
         { errors: { email: "Invalid email or password", password: null } },
-        { status: 400 },
+        { status: 400 }
       );
     }
 
