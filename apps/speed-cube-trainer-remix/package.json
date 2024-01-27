@@ -17,7 +17,7 @@
     "setup": "prisma generate && prisma migrate deploy && prisma db seed",
     "start": "cross-env NODE_ENV=production node ./build/server.js",
     "start:mocks": "cross-env NODE_ENV=production node --require ./mocks --require dotenv/config ./build/server.js",
-    "test": "vitest",
+    "test": "vitest --watch false",
     "e2e": "npx playwright test",
     "e2e:dev": "npx playwright test --ui",
     "e2e:debug": "npx playwright test --debug",
