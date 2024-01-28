@@ -19,6 +19,8 @@ jobs:
       # This line is needed for nx affected to work when CI is running on a PR
       - run: git branch --track main origin/main
 
+      - run: npx nx install speed-cube-trainer-remix
+      - run: cp apps/speed-cube-trainer-remix/.env.example apps/speed-cube-trainer-remix/.env
       - run: npx nx format:check
       - run: npx nx affected -t lint,test,build --parallel=3
       - uses: supabase/setup-cli@v1

@@ -1,0 +1,16 @@
+{
+  "name": "speed-cube-trainer-remix",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/speed-cube-trainer-remix",
+  "projectType": "application",
+  "targets": {
+    "install": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/speed-cube-trainer-remix",
+        "command": "npm install"
+      }
+    }
+  },
+  "tags": []
+}
