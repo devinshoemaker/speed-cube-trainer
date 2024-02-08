@@ -13,21 +13,24 @@ dotenv.config({ path: path.resolve(__dirname, '.env.e2e') });
 /**
  * See https://playwright.dev/docs/test-configuration.
  */
-export default defineConfig({ ...nxE2EPreset(__filename, { testDir: './src' }),
-    /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
-    use: {
-        baseURL,
-        /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-        trace: 'on-first-retry',
-    },
-    /* Run your local dev server before starting the tests */
-    webServer: {
-        command: 'npx nx serve speed-cube-trainer',
-        url: 'http://127.0.0.1:4200',
-        reuseExistingServer: !process.env.CI,
-        cwd: workspaceRoot,
-    }, projects: [
-        { name: "chromium", use: { ...devices["Desktop Chrome"] } },
-        { name: "firefox", use: { ...devices["Desktop Firefox"] } },
-        { name: "webkit", use: { ...devices["Desktop Safari"] } }
-    ] });
+export default defineConfig({
+  ...nxE2EPreset(__filename, { testDir: './src' }),
+  /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
+  use: {
+    baseURL,
+    /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
+    trace: 'on-first-retry',
+  },
+  /* Run your local dev server before starting the tests */
+  webServer: {
+    command: 'npx nx serve speed-cube-trainer',
+    url: 'http://127.0.0.1:4200',
+    reuseExistingServer: !process.env.CI,
+    cwd: workspaceRoot,
+  },
+  projects: [
+    { name: 'chromium', use: { ...devices['Desktop Chrome'] } },
+    { name: 'firefox', use: { ...devices['Desktop Firefox'] } },
+    { name: 'webkit', use: { ...devices['Desktop Safari'] } },
+  ],
+});
